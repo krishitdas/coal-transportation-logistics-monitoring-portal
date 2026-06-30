@@ -1,0 +1,204 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: hsl(222 15% 8%);
+  --color-foreground: hsl(210 20% 92%);
+  --color-card: hsl(222 15% 11%);
+  --color-card-foreground: hsl(210 20% 92%);
+  --color-popover: hsl(222 15% 11%);
+  --color-popover-foreground: hsl(210 20% 92%);
+  --color-primary: hsl(213 70% 45%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(217 15% 18%);
+  --color-secondary-foreground: hsl(210 20% 92%);
+  --color-muted: hsl(217 15% 15%);
+  --color-muted-foreground: hsl(215 15% 55%);
+  --color-accent: hsl(199 89% 48%);
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 72% 51%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-success: hsl(142 70% 45%);
+  --color-success-foreground: hsl(0 0% 100%);
+  --color-warning: hsl(38 92% 50%);
+  --color-warning-foreground: hsl(0 0% 10%);
+  --color-border: hsl(217 15% 18%);
+  --color-input: hsl(217 15% 18%);
+  --color-ring: hsl(213 70% 45%);
+  --color-chart-1: hsl(213 70% 45%);
+  --color-chart-2: hsl(199 89% 48%);
+  --color-chart-3: hsl(142 70% 45%);
+  --color-chart-4: hsl(38 92% 50%);
+  --color-chart-5: hsl(0 72% 51%);
+  --color-sidebar-background: hsl(222 15% 9%);
+  --color-sidebar-foreground: hsl(210 20% 82%);
+  --color-sidebar-primary: hsl(213 70% 45%);
+  --color-sidebar-primary-foreground: hsl(0 0% 100%);
+  --color-sidebar-accent: hsl(217 15% 15%);
+  --color-sidebar-accent-foreground: hsl(210 20% 92%);
+  --color-sidebar-border: hsl(217 15% 16%);
+  --color-sidebar-ring: hsl(213 70% 45%);
+  --radius-lg: 0.625rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.375rem;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --animate-fade-in: fade-in 0.3s ease-out;
+  --animate-slide-up: slide-up 0.3s ease-out;
+  --animate-slide-down: slide-down 0.2s ease-out;
+  --animate-scale-in: scale-in 0.2s ease-out;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-count-up: count-up 1s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 hsla(213, 70%, 45%, 0.3); }
+  50% { box-shadow: 0 0 12px 4px hsla(213, 70%, 45%, 0.15); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Base Styles ── */
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar Styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(217 15% 25%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(217 15% 35%);
+}
+
+/* ── Skeleton Shimmer ── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    hsl(217 15% 15%) 25%,
+    hsl(217 15% 20%) 50%,
+    hsl(217 15% 15%) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+  border-radius: var(--radius-md);
+}
+
+/* ── KPI Card Hover ── */
+.kpi-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 24px hsla(213, 70%, 45%, 0.08);
+}
+
+/* ── Table Row Hover ── */
+.table-row-hover {
+  transition: background-color 0.15s ease;
+}
+
+.table-row-hover:hover {
+  background-color: hsl(217 15% 13%);
+}
+
+/* ── Status Badge Colors ── */
+.status-loading { background-color: hsl(199 89% 48% / 0.15); color: hsl(199 89% 60%); }
+.status-intransit { background-color: hsl(213 70% 45% / 0.15); color: hsl(213 70% 60%); }
+.status-delivered { background-color: hsl(142 70% 45% / 0.15); color: hsl(142 70% 60%); }
+.status-delayed { background-color: hsl(38 92% 50% / 0.15); color: hsl(38 92% 65%); }
+.status-flagged { background-color: hsl(0 72% 51% / 0.15); color: hsl(0 72% 65%); }
+
+/* ── Page Transition ── */
+.page-enter {
+  animation: fade-in 0.3s ease-out, slide-up 0.3s ease-out;
+}
+
+/* ── Gradient Button ── */
+.btn-aurora {
+  background: linear-gradient(135deg, hsl(213 70% 45%), hsl(199 89% 48%));
+  transition: all 0.2s ease;
+}
+
+.btn-aurora:hover {
+  background: linear-gradient(135deg, hsl(213 70% 50%), hsl(199 89% 55%));
+  box-shadow: 0 4px 16px hsla(213, 70%, 45%, 0.3);
+}
+
+/* ── Sidebar ── */
+.sidebar-link {
+  transition: all 0.15s ease;
+}
+
+.sidebar-link:hover {
+  background-color: hsl(217 15% 15%);
+}
+
+.sidebar-link.active {
+  background-color: hsl(213 70% 45% / 0.12);
+  color: hsl(199 89% 60%);
+  border-left: 2px solid hsl(213 70% 45%);
+}
+
+/* ── Monospace for data values ── */
+.font-data {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
