@@ -1,8 +1,8 @@
 import type { VercelResponse } from '@vercel/node';
-import connectToDatabase from '../../lib/mongodb';
-import Trip from '../../models/Trip';
-import Vehicle from '../../models/Vehicle';
-import { withAuth, AuthenticatedRequest } from '../../middleware/auth';
+import connectToDatabase from '../../lib/mongodb.js';
+import Trip from '../../models/Trip.js';
+import Vehicle from '../../models/Vehicle.js';
+import { withAuth, AuthenticatedRequest } from '../../middleware/auth.js';
 
 async function handler(req: AuthenticatedRequest, res: VercelResponse) {
   await connectToDatabase();

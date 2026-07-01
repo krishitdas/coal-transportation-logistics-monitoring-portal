@@ -1,7 +1,7 @@
 import type { VercelResponse } from '@vercel/node';
-import connectToDatabase from '../../lib/mongodb';
-import User from '../../models/User';
-import { withAuth, AuthenticatedRequest } from '../../middleware/auth';
+import connectToDatabase from '../../lib/mongodb.js';
+import User from '../../models/User.js';
+import { withAuth, AuthenticatedRequest } from '../../middleware/auth.js';
 
 async function handler(req: AuthenticatedRequest, res: VercelResponse) {
   if (req.method !== 'GET') {

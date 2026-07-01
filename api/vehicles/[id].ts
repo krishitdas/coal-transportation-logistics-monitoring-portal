@@ -1,9 +1,9 @@
 import type { VercelResponse } from '@vercel/node';
-import connectToDatabase from '../../lib/mongodb';
-import Vehicle from '../../models/Vehicle';
-import { withAuth, AuthenticatedRequest } from '../../middleware/auth';
-import { validate } from '../../middleware/validate';
-import { vehicleUpdateSchema } from '../../validators/vehicle';
+import connectToDatabase from '../../lib/mongodb.js';
+import Vehicle from '../../models/Vehicle.js';
+import { withAuth, AuthenticatedRequest } from '../../middleware/auth.js';
+import { validate } from '../../middleware/validate.js';
+import { vehicleUpdateSchema } from '../../validators/vehicle.js';
 
 async function handler(req: AuthenticatedRequest, res: VercelResponse) {
   const { id } = req.query;

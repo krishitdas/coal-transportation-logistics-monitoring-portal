@@ -1,10 +1,10 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import connectToDatabase from '../../lib/mongodb';
-import User from '../../models/User';
-import { validate } from '../../middleware/validate';
-import { loginSchema } from '../../validators/auth';
+import connectToDatabase from '../../lib/mongodb.js';
+import User from '../../models/User.js';
+import { validate } from '../../middleware/validate.js';
+import { loginSchema } from '../../validators/auth.js';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback-secret-key-for-dev';
 

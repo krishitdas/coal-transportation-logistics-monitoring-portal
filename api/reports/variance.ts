@@ -1,7 +1,7 @@
 import type { VercelResponse } from '@vercel/node';
-import connectToDatabase from '../../lib/mongodb';
-import WeighbridgeEntry from '../../models/WeighbridgeEntry';
-import { withAuth, AuthenticatedRequest } from '../../middleware/auth';
+import connectToDatabase from '../../lib/mongodb.js';
+import WeighbridgeEntry from '../../models/WeighbridgeEntry.js';
+import { withAuth, AuthenticatedRequest } from '../../middleware/auth.js';
 
 async function handler(req: AuthenticatedRequest, res: VercelResponse) {
   await connectToDatabase();

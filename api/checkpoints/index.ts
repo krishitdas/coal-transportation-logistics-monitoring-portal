@@ -1,9 +1,9 @@
 import type { VercelResponse } from '@vercel/node';
-import connectToDatabase from '../../lib/mongodb';
-import RouteCheckpoint from '../../models/RouteCheckpoint';
-import { withAuth, AuthenticatedRequest } from '../../middleware/auth';
-import { validate } from '../../middleware/validate';
-import { checkpointSchema } from '../../validators/checkpoint';
+import connectToDatabase from '../../lib/mongodb.js';
+import RouteCheckpoint from '../../models/RouteCheckpoint.js';
+import { withAuth, AuthenticatedRequest } from '../../middleware/auth.js';
+import { validate } from '../../middleware/validate.js';
+import { checkpointSchema } from '../../validators/checkpoint.js';
 
 async function handler(req: AuthenticatedRequest, res: VercelResponse) {
   await connectToDatabase();

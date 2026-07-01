@@ -1,9 +1,9 @@
 import type { VercelResponse } from '@vercel/node';
-import connectToDatabase from '../../lib/mongodb';
-import WeighbridgeEntry from '../../models/WeighbridgeEntry';
-import { withAuth, AuthenticatedRequest } from '../../middleware/auth';
-import { validate } from '../../middleware/validate';
-import { weighbridgeUpdateSchema } from '../../validators/weighbridge';
+import connectToDatabase from '../../lib/mongodb.js';
+import WeighbridgeEntry from '../../models/WeighbridgeEntry.js';
+import { withAuth, AuthenticatedRequest } from '../../middleware/auth.js';
+import { validate } from '../../middleware/validate.js';
+import { weighbridgeUpdateSchema } from '../../validators/weighbridge.js';
 
 async function handler(req: AuthenticatedRequest, res: VercelResponse) {
   const { id } = req.query;

@@ -1,5 +1,5 @@
 import type { VercelResponse } from '@vercel/node';
-import { AuthenticatedRequest } from './auth';
+import { AuthenticatedRequest } from './auth.js';
 
 export const withRoles = (allowedRoles: string[], handler: (req: AuthenticatedRequest, res: VercelResponse) => any | Promise<any>) => {
   return async (req: AuthenticatedRequest, res: VercelResponse) => {

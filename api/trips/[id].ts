@@ -1,9 +1,9 @@
 import type { VercelResponse } from '@vercel/node';
-import connectToDatabase from '../../lib/mongodb';
-import Trip from '../../models/Trip';
-import { withAuth, AuthenticatedRequest } from '../../middleware/auth';
-import { validate } from '../../middleware/validate';
-import { tripUpdateSchema } from '../../validators/trip';
+import connectToDatabase from '../../lib/mongodb.js';
+import Trip from '../../models/Trip.js';
+import { withAuth, AuthenticatedRequest } from '../../middleware/auth.js';
+import { validate } from '../../middleware/validate.js';
+import { tripUpdateSchema } from '../../validators/trip.js';
 
 async function handler(req: AuthenticatedRequest, res: VercelResponse) {
   const { id } = req.query;

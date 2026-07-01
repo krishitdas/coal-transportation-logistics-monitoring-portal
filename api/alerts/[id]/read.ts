@@ -1,7 +1,7 @@
 import type { VercelResponse } from '@vercel/node';
-import connectToDatabase from '../../../lib/mongodb';
-import Alert from '../../../models/Alert';
-import { withAuth, AuthenticatedRequest } from '../../../middleware/auth';
+import connectToDatabase from '../../../lib/mongodb.js';
+import Alert from '../../../models/Alert.js';
+import { withAuth, AuthenticatedRequest } from '../../../middleware/auth.js';
 
 async function handler(req: AuthenticatedRequest, res: VercelResponse) {
   const { id } = req.query;
