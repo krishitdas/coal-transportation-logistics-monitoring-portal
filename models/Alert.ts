@@ -39,4 +39,4 @@ const AlertSchema: Schema = new Schema(
 AlertSchema.index({ status: 1 });
 AlertSchema.index({ severity: 1 });
 
-export default mongoose.models.Alert || mongoose.model<IAlert>('Alert', AlertSchema);
+export default (mongoose.models.Alert as mongoose.Model<IAlert>) || mongoose.model<IAlert>('Alert', AlertSchema);

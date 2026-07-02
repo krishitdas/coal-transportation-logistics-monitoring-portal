@@ -49,4 +49,4 @@ TripSchema.index({ status: 1 });
 TripSchema.index({ dispatchDate: 1 });
 TripSchema.index({ vehicleId: 1 });
 
-export default mongoose.models.Trip || mongoose.model<ITrip>('Trip', TripSchema);
+export default (mongoose.models.Trip as mongoose.Model<ITrip>) || mongoose.model<ITrip>('Trip', TripSchema);

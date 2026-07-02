@@ -25,4 +25,4 @@ const VehicleSchema: Schema = new Schema(
   { timestamps: true }
 );
 
-export default mongoose.models.Vehicle || mongoose.model<IVehicle>('Vehicle', VehicleSchema);
+export default (mongoose.models.Vehicle as mongoose.Model<IVehicle>) || mongoose.model<IVehicle>('Vehicle', VehicleSchema);

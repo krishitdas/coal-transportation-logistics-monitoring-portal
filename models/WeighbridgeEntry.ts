@@ -25,4 +25,4 @@ const WeighbridgeEntrySchema: Schema = new Schema(
   { timestamps: true }
 );
 
-export default mongoose.models.WeighbridgeEntry || mongoose.model<IWeighbridgeEntry>('WeighbridgeEntry', WeighbridgeEntrySchema);
+export default (mongoose.models.WeighbridgeEntry as mongoose.Model<IWeighbridgeEntry>) || mongoose.model<IWeighbridgeEntry>('WeighbridgeEntry', WeighbridgeEntrySchema);

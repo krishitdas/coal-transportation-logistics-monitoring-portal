@@ -21,4 +21,4 @@ const RouteCheckpointSchema: Schema = new Schema(
 RouteCheckpointSchema.index({ tripId: 1 });
 RouteCheckpointSchema.index({ timestamp: 1 });
 
-export default mongoose.models.RouteCheckpoint || mongoose.model<IRouteCheckpoint>('RouteCheckpoint', RouteCheckpointSchema);
+export default (mongoose.models.RouteCheckpoint as mongoose.Model<IRouteCheckpoint>) || mongoose.model<IRouteCheckpoint>('RouteCheckpoint', RouteCheckpointSchema);
