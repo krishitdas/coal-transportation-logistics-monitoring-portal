@@ -1,6 +1,14 @@
 {
   "rewrites": [
-    { "source": "/api/:path*", "destination": "/api/:path*" },
+    { "source": "/api/auth/:path*", "destination": "/api/auth" },
+    { "source": "/api/alerts/:path*", "destination": "/api/alerts" },
+    { "source": "/api/checkpoints/:path*", "destination": "/api/checkpoints" },
+    { "source": "/api/dashboard/:path*", "destination": "/api/dashboard" },
+    { "source": "/api/reports/:path*", "destination": "/api/reports" },
+    { "source": "/api/trips/:path*", "destination": "/api/trips" },
+    { "source": "/api/users/:path*", "destination": "/api/users" },
+    { "source": "/api/vehicles/:path*", "destination": "/api/vehicles" },
+    { "source": "/api/weighbridge/:path*", "destination": "/api/weighbridge" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
