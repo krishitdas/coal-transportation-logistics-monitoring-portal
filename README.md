@@ -460,7 +460,7 @@ https://github.com/krishitdas
 
 LinkedIn
 
-*(Add your LinkedIn profile here)*
+*[(Add your LinkedIn profile here)](https://www.linkedin.com/in/krishit1/)*
 
 ---
 
